@@ -217,7 +217,7 @@ public class Register extends AppCompatActivity {
     }
 
     private boolean isValidContactNumber(String contactNumber) {
-        String contactPattern = "^\\+639\\d{10}$";
+        String contactPattern = "^\\+639\\d{9}$";
         return contactNumber.matches(contactPattern);
     }
 

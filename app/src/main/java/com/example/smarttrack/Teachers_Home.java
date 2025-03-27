@@ -97,6 +97,14 @@ public class Teachers_Home extends AppCompatActivity {
         fetchRoomsByTeacher(uid);
         fetchUserDetailed(uid);
 
+        ImageView announcementIcon = findViewById(R.id.announcementIcon);
+
+        announcementIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(Teachers_Home.this, AnnouncementActivity.class);
+            intent.putExtra("uid", uid);
+            startActivity(intent);
+            overridePendingTransition(0, 0);
+        });
 
 
 

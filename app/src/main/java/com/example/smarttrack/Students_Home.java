@@ -81,6 +81,14 @@ public class Students_Home extends AppCompatActivity {
         fetchUserDetails(uid);
         fetchUserDetailed(uid);
 
+        ImageView announcementIcon = findViewById(R.id.announcementIcon);
+
+        announcementIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(Students_Home.this, AnnouncementActivity.class);
+            intent.putExtra("uid", uid);
+            startActivity(intent);
+        });
+
         // Fetch rooms and initialize location tracking
         fetchRoomsForToday();
         fetchEventsForToday();

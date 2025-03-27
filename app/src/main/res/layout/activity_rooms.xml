@@ -35,7 +35,6 @@
                 android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
-
             <ImageView
                 android:id="@+id/logoIcon"
                 android:layout_width="70dp"
@@ -44,6 +43,15 @@
                 android:contentDescription="Logo Icon"
                 android:padding="5dp"
                 android:src="@drawable/circle_logo" />
+
+            <ImageView
+                android:id="@+id/announcementIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/notifications_24dp_e8eaed_fill0_wght400_grad0_opsz24"
+                />
         </androidx.appcompat.widget.Toolbar>
 
         <!-- Scan QR Button -->
