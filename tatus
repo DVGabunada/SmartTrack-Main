@@ -1,0 +1,29 @@
+[33mcommit 457356951ba4ca085953a2cea8aba46858a3a663[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: DVGabunada <bisrockerz2@gmail.com>
+Date:   Thu Mar 27 09:59:18 2025 +0800
+
+    Initial push to new repository
+
+ .idea/appInsightsSettings.xml                      |  26 [32m++[m
+ .idea/deploymentTargetSelector.xml                 |  10 [32m+[m[31m-[m
+ .idea/misc.xml                                     |   1 [31m-[m
+ app/src/main/AndroidManifest.xml                   |  10 [32m+[m
+ .../java/com/example/smarttrack/Announcement.java  |  86 [32m+++++[m
+ .../example/smarttrack/AnnouncementActivity.java   | 380 [32m+++++++++++++++++++++[m
+ .../example/smarttrack/AnnouncementAdapter.java    |  72 [32m++++[m
+ .../smarttrack/EditAnnouncementActivity.java       |  74 [32m++++[m
+ .../main/java/com/example/smarttrack/Login.java    |   2 [32m+[m
+ .../main/java/com/example/smarttrack/Register.java |   2 [32m+[m[31m-[m
+ .../java/com/example/smarttrack/Students_Home.java |   8 [32m+[m
+ .../java/com/example/smarttrack/Teachers_Home.java |   8 [32m+[m
+ .../res/drawable/announcement_input_border.xml     |   6 [32m+[m
+ ...link_24dp_e8eaed_fill0_wght400_grad0_opsz24.xml |  13 [32m+[m
+ ...ions_24dp_e8eaed_fill0_wght400_grad0_opsz24.xml |  13 [32m+[m
+ app/src/main/res/layout/activity_announcement.xml  | 244 [32m+++++++++++++[m
+ .../main/res/layout/activity_announcement_form.xml | 142 [32m++++++++[m
+ .../main/res/layout/activity_announcement_view.xml |  98 [32m++++++[m
+ .../res/layout/activity_edit_announcement_form.xml | 147 [32m++++++++[m
+ app/src/main/res/layout/activity_home.xml          |  11 [32m+[m
+ app/src/main/res/layout/activity_rooms.xml         |  10 [32m+[m[31m-[m
+ app/src/main/res/layout/announcement_list.xml      |  77 [32m+++++[m
+ 22 files changed, 1428 insertions(+), 12 deletions(-)

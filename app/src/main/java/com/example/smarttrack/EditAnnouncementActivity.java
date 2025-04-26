@@ -4,21 +4,27 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class EditAnnouncementActivity extends AppCompatActivity {
 
+    private TextView roomText;
     private EditText titleInput, messageInput;
     private Button updateButton, cancelButton;
     private FirebaseFirestore db;
     private String announcementId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,16 +38,19 @@ public class EditAnnouncementActivity extends AppCompatActivity {
         announcementId = intent.getStringExtra("announcementId");
         String title = intent.getStringExtra("title");
         String message = intent.getStringExtra("message");
+        String roomCode = intent.getStringExtra("roomCode");
 
         // Initialize UI components
         titleInput = findViewById(R.id.titleInput);
         messageInput = findViewById(R.id.messageInput);
         updateButton = findViewById(R.id.updateEditButton);
         cancelButton = findViewById(R.id.cancelEditButton);
+        roomText = findViewById(R.id.roomtext);
 
         // Set current values
         titleInput.setText(title);
         messageInput.setText(message);
+        roomText.setText(roomCode);
 
         // Handle update button click
         updateButton.setOnClickListener(v -> updateAnnouncement());

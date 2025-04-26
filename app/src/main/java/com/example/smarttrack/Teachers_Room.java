@@ -240,14 +240,14 @@ public class Teachers_Room extends AppCompatActivity {
 
 
 
-    // Method to show the floating window with buttons
+
     private void showFloatingWindow(String roomCode, String subjectCode, String section) {
         View blurBackground = findViewById(R.id.blurBackground);
-        floatingWindow.setVisibility(View.VISIBLE);  // Show the floating window
-        blurBackground.setVisibility(View.VISIBLE);  // Show the blur background
+        floatingWindow.setVisibility(View.VISIBLE);
+        blurBackground.setVisibility(View.VISIBLE);
         roomsLayout.setVisibility(View.GONE);
 
-        // Set room-related text
+
         Button generateCodeButton = findViewById(R.id.generateCodeButton);
         Button viewStudentsButton = findViewById(R.id.viewStudentsButton);
         generateCodeButton.setText("Generate Code");
@@ -255,10 +255,10 @@ public class Teachers_Room extends AppCompatActivity {
 
 
 
-        // Set onClickListeners for the buttons inside the floating window
+
         generateCodeButton.setOnClickListener(v -> {
             Intent intent = new Intent(Teachers_Room.this, GenerateCode.class);
-            intent.putExtra("roomCode", roomCode); // Pass the roomCode to GenerateCode
+            intent.putExtra("roomCode", roomCode);
             intent.putExtra("subjectSection", subjectCode + " - " + section); // Include subject and section
             startActivity(intent);
         });
@@ -269,7 +269,7 @@ public class Teachers_Room extends AppCompatActivity {
                 return;
             }
 
-            // Fetch the roomId based on the roomCode before transitioning
+
             FirebaseFirestore.getInstance().collection("rooms")
                     .whereEqualTo("roomCode", roomCode)
                     .get()
@@ -279,9 +279,9 @@ public class Teachers_Room extends AppCompatActivity {
                             Log.d("showFloatingWindow", "Room ID resolved: " + roomId);
 
                             Intent intent = new Intent(Teachers_Room.this, ViewStudents.class);
-                            intent.putExtra("roomId", roomId); // Pass the resolved roomId to ViewStudents
-                            intent.putExtra("section", section); // Pass the section to ViewStudents
-                            intent.putExtra("subjectCode", subjectCode); // Pass the subjectCode to ViewStudents
+                            intent.putExtra("roomId", roomId);
+                            intent.putExtra("section", section);
+                            intent.putExtra("subjectCode", subjectCode);
                             startActivity(intent);
                         } else {
                             Toast.makeText(this, "No room found for the provided code.", Toast.LENGTH_SHORT).show();

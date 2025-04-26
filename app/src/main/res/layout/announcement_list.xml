@@ -36,6 +36,14 @@
                 android:text="Teacher"/>
 
             <TextView
+                android:id="@+id/roomCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:textSize="15dp"
+                android:text="RoomCode"/>
+
+            <TextView
                 android:id="@+id/timestamp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

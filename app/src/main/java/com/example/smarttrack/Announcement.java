@@ -16,10 +16,11 @@ public class Announcement {
 
     public Announcement() {}
 
-    public Announcement(String id, String announcement_title, String announcement_message,String uid, Timestamp timestamp, String teacherUid, String teacherName){
+    public Announcement(String id, String announcement_title, String announcement_message,String uid,String roomCode, Timestamp timestamp, String teacherUid, String teacherName){
         this.id = id;
         this.announcement_title = announcement_title;
         this.announcement_message = announcement_message;
+        this.roomCode = roomCode;
         this.timestamp = timestamp;
         this.teacherUid = teacherUid;
         this.teacherName = teacherName;
@@ -47,6 +48,14 @@ public class Announcement {
 
     public void setAnnouncement_message(String announcement_message) {
         this.announcement_message = announcement_message;
+    }
+
+    public String getRoomCode() {
+        return roomCode;
+    }
+
+    public void setRoomCode(String roomCode) {
+        this.roomCode = roomCode;
     }
 
     public Timestamp getTimestamp() {

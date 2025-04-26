@@ -50,6 +50,24 @@ android:padding="24dp">
             android:layout_weight="1" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/spinnerLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Room"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp" />
+    <!-- Spinner -->
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:minHeight="100dp" />
+
     <!-- Title Input -->
     <TextView
         android:id="@+id/titleLabel"
@@ -99,13 +117,7 @@ android:padding="24dp">
         android:minLines="5"
         android:padding="8dp" />
 
-    <!-- Spinner -->
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:minHeight="60dp" />
+
 
     <!-- Buttons -->
     <LinearLayout

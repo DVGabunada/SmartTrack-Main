@@ -40,7 +40,7 @@ public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapte
         holder.titleTextView.setText(announcement.getAnnouncement_title());
         holder.teacherTextView.setText("By: " + announcement.getTeacherName());
         holder.timestampTextView.setText(announcement.getFormattedTimestamp());
-
+        holder.roomCodeTextView.setText(announcement.getRoomCode());
         holder.editButton.setOnClickListener(v -> listener.onEditClick(announcement));
         holder.deleteButton.setOnClickListener(v -> listener.onDeleteClick(announcement));
     }
@@ -51,7 +51,7 @@ public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapte
     }
 
     public static class AnnouncementViewHolder extends RecyclerView.ViewHolder {
-        TextView titleTextView, teacherTextView, timestampTextView;
+        TextView titleTextView, teacherTextView, timestampTextView, roomCodeTextView;
         Button editButton, deleteButton;
 
         public AnnouncementViewHolder(@NonNull View itemView) {
@@ -61,6 +61,7 @@ public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapte
             timestampTextView = itemView.findViewById(R.id.timestamp);
             editButton = itemView.findViewById(R.id.editAnnouncement);
             deleteButton = itemView.findViewById(R.id.deleteAnnouncement);
+            roomCodeTextView = itemView.findViewById(R.id.roomCode);
         }
     }
 
