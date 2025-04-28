@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#800000"> <!-- Maroon Background -->
+
+    <!-- Search Bar -->
+    <SearchView
+        android:id="@+id/locationSearchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="#FFD700"
+    android:queryHint="Search for a location"/>
+
+    <!-- Search Results List -->
+    <ListView
+        android:id="@+id/searchResults"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/locationSearchView"
+        android:background="#FFF8DC"
+    android:visibility="gone"/>
+
+    <!-- OpenStreetMap MapView -->
+    <org.osmdroid.views.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchResults"
+        android:background="#FFD700"/>
+
+    <!-- Confirm Button -->
+
+    <!-- Pin Current Location Button -->
+    <Button
+        android:id="@+id/pinCurrentLocationButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/confirmLocationButton"
+        android:layout_margin="8dp"
+        android:text="Pin Current Location"
+        android:textColor="#FFFFFF"
+        android:background="#006400"/> <!-- Dark Green -->
+
+
+    <Button
+        android:id="@+id/confirmLocationButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Confirm Location"
+        android:layout_margin="8dp"
+        android:textColor="#FFFFFF"
+        android:background="#800000"/> <!-- Maroon -->
+
+</RelativeLayout>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/logo"
+            android:contentDescription="Logo" />
+
+        <!-- Welcome Text -->
+        <TextView
+            android:id="@+id/welcomeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="REGISTRATION"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/subtitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Create an Account."
+            android:textSize="14sp"
+            android:textColor="@color/gray" />
+
+        <!-- Login Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="24dp"
+            android:padding="16dp"
+            android:background="@drawable/card_background"
+            android:elevation="4dp">
+
+            <!-- Login Title -->
+
+
+
+
+        <EditText
+            android:id="@+id/emailField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="textEmailAddress" />
+
+        <!-- Name Fields -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <EditText
+                android:id="@+id/firstNameField"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_edittext"
+                android:hint="First Name" />
+
+            <EditText
+                android:id="@+id/middleNameField"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/rounded_edittext"
+                android:hint="M.I" />
+
+            <EditText
+                android:id="@+id/lastNameField"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="@drawable/rounded_edittext"
+                android:hint="Last Name" />
+        </LinearLayout>
+
+        <!-- ID Number Field -->
+        <EditText
+            android:id="@+id/idNumberField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="ID Number"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="text" />
+
+        <!-- Password Fields -->
+        <EditText
+            android:id="@+id/passwordField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="Password"
+            android:layout_marginBottom="10dp"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/confirmPasswordField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Confirm Password"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="textPassword" />
+
+        <!-- User Type Dropdown -->
+
+            <!-- Additional Fields for Students -->
+            <EditText
+                android:id="@+id/courseYearField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Course-Year"
+                android:layout_marginTop="30dp"
+                android:visibility="gone"
+                android:background="@drawable/rounded_edittext" />
+
+            <Spinner
+                android:id="@+id/genderSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="8dp"
+                android:entries="@array/gender_options" />
+
+
+            <EditText
+                android:id="@+id/dobPicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Date of Birth"
+                android:focusable="false"
+                android:clickable="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_edittext"
+                android:visibility="gone" />
+
+
+            <EditText
+                android:id="@+id/homeAddressField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Home Address"
+                android:visibility="gone"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_edittext" />
+
+            <EditText
+                android:id="@+id/cityAddressField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="City Address"
+                android:visibility="gone"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_edittext" />
+
+            <EditText
+                android:id="@+id/contactNumberField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contact # (+63)"
+                android:inputType="phone"
+                android:visibility="gone"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_edittext" />
+
+
+            <!-- Sign-Up Button -->
+        <Button
+            android:id="@+id/signUpButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="SIGN UP"
+            android:backgroundTint="@color/gold"
+            android:layout_marginBottom="30dp"
+            android:textColor="@color/white" />
+
+
+
+    </LinearLayout>
+        <TextView
+            android:id="@+id/alreadyHaveAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Already have an Account?"
+            android:textSize="14sp"
+            android:textColor="@color/blue"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+
+</ScrollView>

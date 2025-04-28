@@ -1,0 +1,480 @@
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <!-- Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/ToolbarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/maroon">
+
+
+            <ImageView
+                android:id="@+id/menuIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:contentDescription="Menu Icon"
+                android:src="@drawable/ic_menu" />
+
+            <!-- Centered Title -->
+            <TextView
+                android:id="@+id/toolbarTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:text="Rooms"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/logoIcon"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:contentDescription="Logo Icon"
+                android:padding="5dp"
+                android:src="@drawable/circle_logo" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- Scan QR Button -->
+        <Button
+            android:id="@+id/scanQRButtons"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/separator2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            android:text="Scan QR" />
+
+        <TextView
+            android:id="@+id/ORtextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/scanQRButtons"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="OR"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+
+        <Button
+            android:id="@+id/inputCodeButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/ORtextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:text="Input code" />
+
+        <Button
+            android:id="@+id/createRoomButton"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/searchSortLayout"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="65dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/dotted_border"
+            android:gravity="center"
+            android:text="CREATE ROOM +"
+            android:textColor="#8C8C8C"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/searchSortLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/searchField"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableStart="@android:drawable/ic_menu_search"
+                android:hint="Search..."
+
+                android:padding="10dp" />
+
+            <ImageView
+                android:id="@+id/sortButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="2dp"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="Sort"
+                android:padding="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/sort" />
+        </LinearLayout>
+
+        <!-- Separator Line -->
+        <View
+            android:id="@+id/separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/separator2"
+            android:layout_marginTop="220dp"
+            android:background="@android:color/darker_gray" />
+
+        <!--   <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:gravity="end"
+               android:layout_below="@id/separator"
+               android:padding="10dp">
+
+               <ToggleButton
+                   android:id="@+id/toggleRoomType"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textOn="Admin Rooms"
+                   android:textOff="Teacher Rooms"
+                   android:textColor="@android:color/white"
+                   android:backgroundTint="@color/maroon" />
+           </LinearLayout> -->
+
+
+        <LinearLayout
+            android:id="@+id/tabContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/separator"
+            android:orientation="vertical">
+
+            <!-- TabLayout for horizontal scrolling -->
+
+            <!-- ViewPager to host fragments -->
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="75dp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/separator2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/toolbar"
+            android:layout_marginTop="80dp"
+            android:background="@android:color/darker_gray" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/separator"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="75dp"
+            android:fillViewport="true">
+
+            <!-- Rooms List -->
+            <LinearLayout
+                android:id="@+id/roomsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:visibility="gone" />
+        </ScrollView>
+
+        <!-- No Rooms Available Message -->
+        <TextView
+            android:id="@+id/noRoomsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/separator"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:text="No Rooms Available"
+            android:textColor="#ABA0A0"
+            android:textSize="16sp" />
+
+        <!-- Navigation Bar -->
+        <LinearLayout
+            android:id="@+id/navigationBar"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/nav_bar_bg"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!-- Home Icon -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/homeIcon"
+                    android:layout_width="62dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="Home"
+                    android:padding="5dp"
+                    android:src="@drawable/homewhite"
+                    android:layout_marginBottom="20dp"/>
+
+            </LinearLayout>
+
+            <!-- Room Icon -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/circle_white"
+                    android:layout_marginBottom="21dp">
+
+                    <!-- Yellow Circle -->
+                    <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/circle_yellow">
+
+                        <ImageView
+                            android:id="@+id/roomIcon"
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="Rooms"
+                            android:src="@drawable/roomblack" />
+
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|bottom"
+                        android:text="Rooms"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <!-- Report Icon -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/reportIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="Report"
+                    android:padding="5dp"
+                    android:src="@drawable/reportwhite"
+                    android:layout_marginBottom="20dp"/>
+
+            </LinearLayout>
+
+            <!-- Schedule Icon -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/scheduleIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="Schedule"
+                    android:padding="5dp"
+                    android:src="@drawable/calendarwhite"
+                    android:layout_marginBottom="20dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+<!--
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@android:style/Widget.ProgressBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:padding="185dp"
+        android:layout_marginTop="250dp"
+        android:progressTint="@color/maroon"
+        /> -->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <!-- Background Blur -->
+        <View
+            android:id="@+id/blurBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#A6000000"
+            android:visibility="gone" />
+
+        <!-- Floating Window -->
+        <LinearLayout
+            android:id="@+id/floatingWindow"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="200dp"
+            android:background="@drawable/rounded_border"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:visibility="gone">
+
+            <!-- Back Button to Close Floating Window -->
+            <ImageView
+                android:id="@+id/closeFloatingWindow"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:contentDescription="Back"
+                android:src="@drawable/back" />
+
+            <!-- Buttons for "Generate Code" and "View Students" -->
+            <Button
+                android:id="@+id/generateCodeButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/button_gold_border"
+                android:text="Generate Code"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/viewStudentsButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_gold_border"
+                android:text="View Students"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:visibility="visible" />
+
+
+            <!-- Buttons for "Generate Code" and "View Students" -->
+
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Navigation Drawer -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/navUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/navIdNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID Number"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/manualLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Read the Manual here"
+                android:textSize="14sp"
+                android:textColor="@android:color/holo_blue_dark"
+                android:clickable="true"
+                android:focusable="true" />
+
+
+            <Button
+                android:id="@+id/logoutButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/maroon"
+                android:padding="10dp"
+                android:text="Logout"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+
+    </com.google.android.material.navigation.NavigationView>
+
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

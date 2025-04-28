@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="8dp"
+    app:cardBackgroundColor="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Room Name -->
+        <TextView
+            android:id="@+id/tvRoomName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NSTP (G01)"
+            android:textColor="@color/maroon"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- Date -->
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Date: 2025-02-22"
+            android:textSize="14sp"
+            android:textColor="@android:color/black" />
+
+        <!-- Time In -->
+        <TextView
+            android:id="@+id/tvTimeIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Time In: 10:05 PM"
+            android:textSize="14sp"
+            android:textColor="@android:color/black" />
+
+        <!-- In Location -->
+        <TextView
+            android:id="@+id/tvInLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location: Room 101"
+            android:textSize="14sp"
+            android:textColor="@android:color/black" />
+
+        <!-- Time In Status -->
+        <TextView
+            android:id="@+id/tvTimeInStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Time In Status: Late"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="@android:color/black" />
+
+        <!-- Time Out -->
+        <TextView
+            android:id="@+id/tvTimeOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Time Out: N/A"
+            android:textSize="14sp"
+            android:textColor="@android:color/black" />
+
+        <!-- Out Location -->
+        <TextView
+            android:id="@+id/tvOutLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location: 2nd Floor"
+            android:textSize="14sp"
+            android:textColor="@android:color/black" />
+
+        <!-- Time Out Status -->
+        <TextView
+            android:id="@+id/tvTimeOutStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Time Out Status: On Time"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

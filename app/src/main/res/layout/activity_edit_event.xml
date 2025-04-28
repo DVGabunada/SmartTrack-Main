@@ -1,0 +1,233 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/notifyStudentsField"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Back Button and Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/eventBackButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/back"
+                android:text="X"
+                android:textColor="@color/maroon" />
+
+            <TextView
+                android:id="@+id/editEventText"
+                android:layout_width="290dp"
+                android:layout_height="59dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="EDIT EVENT"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Event Title -->
+        <EditText
+            android:id="@+id/eventTitleField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="Activity Name"
+            android:padding="16dp"
+            android:textSize="16sp" />
+
+        <!-- Event Description -->
+        <EditText
+            android:id="@+id/eventDescField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="Description"
+            android:padding="16dp"
+            android:textSize="16sp" />
+
+        <!-- Location -->
+        <EditText
+            android:id="@+id/locationField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="Location"
+            android:padding="16dp"
+            android:textSize="16sp" />
+
+        <!-- Add Student -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Class"
+                android:textSize="16sp"
+                android:padding="8dp" />
+
+            <Button
+                android:id="@+id/selectRoomsButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_border"
+                android:text="Select Class"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/selectedRoomsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No rooms selected"
+                android:textSize="14sp"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Date Picker -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/selectedDateTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Selected Date: September 22, 2024"
+                android:textSize="16sp"
+                android:padding="8dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/selectDateButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_border"
+                android:padding="10dp"
+                android:text="Select Date"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <!-- Notify and Whole Day Checkboxes -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <CheckBox
+                android:id="@+id/notifycheckBox"
+                android:layout_width="174dp"
+                android:layout_height="48dp"
+                android:text="Notify"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/wholeDaycheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:text="Whole Day"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Time Start and End -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time Start"
+                    android:textSize="14sp"
+                    android:padding="8dp" />
+
+                <Button
+                    android:id="@+id/eventStartTimeField"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/rounded_border"
+                    android:text="00:00"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time End"
+                    android:textSize="14sp"
+                    android:padding="8dp" />
+
+                <Button
+                    android:id="@+id/eventEndTimeField"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/rounded_border"
+                    android:text="12:00"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/editEventButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_gold"
+                android:padding="12dp"
+                android:text="EDIT"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

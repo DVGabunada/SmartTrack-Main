@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Main Content (RelativeLayout) -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <!-- Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/ToolbarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/maroon">
+
+            <!-- Menu Icon (Left) -->
+            <ImageView
+                android:id="@+id/menuIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:src="@drawable/ic_menu"
+                android:contentDescription="Menu Icon" />
+
+            <!-- Centered Title: "Reports" -->
+            <TextView
+                android:id="@+id/toolbarTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:text="Reports"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Right Logo Icon (Optional) -->
+            <ImageView
+                android:id="@+id/logoIcon"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:padding="5dp"
+                android:src="@drawable/circle_logo"
+                android:contentDescription="Logo Icon" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- Date Range Selection (Start/End + Filter) -->
+        <LinearLayout
+            android:id="@+id/dateRangeContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <!-- Start Date -->
+            <TextView
+                android:id="@+id/tvStartDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_calendar"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:text="Start Date"
+                android:textColor="#800000"
+                android:textSize="16sp" />
+
+            <!-- End Date -->
+            <TextView
+                android:id="@+id/tvEndDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_calendar"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:text="End Date"
+                android:textColor="#800000"
+                android:textSize="16sp" />
+
+            <!-- Filter Button -->
+            <Button
+                android:id="@+id/btnFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Filter"
+                android:textColor="@android:color/white"
+                android:background="@color/maroon" />
+        </LinearLayout>
+
+        <!-- Attendance RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/attendanceRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/dateRangeContainer"
+            android:layout_above="@+id/navigationBar"
+            android:layout_margin="16dp"
+            android:clipToPadding="false"
+            android:paddingBottom="85dp" />
+
+        <!-- Bottom Navigation Bar -->
+        <LinearLayout
+            android:id="@+id/navigationBar"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/nav_bar_bg"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/homeIcon"
+                    android:layout_width="62dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/homewhite"
+                    android:contentDescription="Home"
+                    android:padding="5dp"
+                    android:layout_marginBottom="20dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/roomIcon"
+                    android:layout_width="62dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/roomwhite"
+                    android:contentDescription="Rooms"
+                    android:padding="5dp"
+                    android:layout_marginBottom="20dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <!-- White Circle Background (Smaller & Adjusted Position) -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/circle_white"
+                    android:layout_marginBottom="21dp">
+
+                    <!-- Yellow Circle -->
+                    <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/circle_yellow">
+
+                        <ImageView
+                            android:id="@+id/reportIcon"
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="Reports"
+                            android:src="@drawable/reportblack" />
+
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|bottom"
+                        android:text="Reports"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/scheduleIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/calendarwhite"
+                    android:contentDescription="Schedule"
+                    android:padding="5dp"
+                    android:layout_marginBottom="20dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- PROGRESS BAR - Centered & Hidden Initially -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:elevation="-10dp"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+    <!-- Navigation Drawer (NavigationView) -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/navUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/navIdNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID Number"
+                android:textSize="16sp" />
+
+
+            <TextView
+                android:id="@+id/manualLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Read the Manual here"
+                android:textSize="14sp"
+                android:textColor="@android:color/holo_blue_dark"
+                android:clickable="true"
+                android:focusable="true" />
+
+
+
+            <Button
+                android:id="@+id/logoutButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/maroon"
+                android:padding="10dp"
+                android:text="Logout"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>

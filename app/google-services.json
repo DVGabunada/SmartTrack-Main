@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "988732072064",
+    "project_id": "smarttrack-e2cac",
+    "storage_bucket": "smarttrack-e2cac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988732072064:android:ade7bbb7d36256fc7c4665",
+        "android_client_info": {
+          "package_name": "com.example.smarttrack"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxnZ_DUWNRe7G4dLghXqBpjGbqd12O5l8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

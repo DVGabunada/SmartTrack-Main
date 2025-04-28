@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="@android:color/white"
+    android:elevation="2dp"
+    android:layout_marginBottom="8dp">
+
+    <TextView
+        android:id="@+id/monthName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="January"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="8dp"
+        android:background="@drawable/button_gold_border"
+        android:textColor="@android:color/white"/>
+
+    <!-- Hidden Attendance Details -->
+    <LinearLayout
+        android:id="@+id/attendanceDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:visibility="gone"
+        android:background="@drawable/card_background">
+
+        <TextView
+            android:id="@+id/presentLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Presents: 0"
+            android:textSize="18sp"
+            android:textColor="@android:color/holo_green_dark"/>
+
+        <TextView
+            android:id="@+id/lateLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lates: 0"
+            android:textSize="18sp"
+            android:textColor="@android:color/holo_orange_dark"/>
+
+        <TextView
+            android:id="@+id/absentLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Absents: 0"
+            android:textSize="18sp"
+            android:textColor="@android:color/holo_red_dark"/>
+    </LinearLayout>
+</LinearLayout>

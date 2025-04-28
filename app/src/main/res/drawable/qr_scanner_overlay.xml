@@ -1,0 +1,18 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fullscreen dim effect -->
+    <item>
+        <color android:color="#80000000" />
+    </item>
+
+    <!-- Transparent square in the center -->
+    <item>
+        <shape>
+            <solid android:color="@android:color/transparent" />
+        </shape>
+        <clip android:gravity="center">
+            <size
+                android:width="250dp"
+                android:height="250dp" />
+        </clip>
+    </item>
+</layer-list>
